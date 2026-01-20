@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    <p>Em qual país você nasceu? <input type="text" name="txtnac" id="txtnac"> </p>
+    <input type="button" value="Verificar" onclick="nacionalidade()">
+    <div id="res">
+
+    </div>
+    <script>
+        var txtnac = document.getElementById('txtnac');
+        var res = document.getElementById('res');
+
+        function nacionalidade() {
+            var nac = txtnac.value;
+            res.innerHTML = `<p>Você nasceu no(a) <strong>${nac}</strong></p>`
+            if (nac == "Brasil") {
+                res.innerHTML += (`<p>Voce é brasileiro. <strong>Bem-vindo de volta!</strong></p>`)
+            } else {
+                res.innerHTML += (`<p>Voce é estrangeiro! <strong>Bem-vindo ao Brasil!</strong></p>`)
+            }
+        }
+    </script>
+</body>
+</html>
