@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio das Boas-Vindas</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das Boas-Vindas</h1>
+        <hr>
+    <p> <button onclick="clicou()">Inicie o Desafio</button> </p>
+    <script>
+        function clicou() {
+            var nome = prompt("Bem-vindo ao Desafio! Qual é o seu nome?");
+            var idade = prompt(`Olá, ${nome}! Quantos anos você tem?`);
+            alert(`Acabei de conhecer ${nome}, que tem ${idade} anos!`);
+        }
+    </script>
+</body>
+</html>
