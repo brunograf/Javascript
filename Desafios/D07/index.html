@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Conversor de Moedas</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="cotacaoDolar()">
+    <h1>Conversor R$ → US$</h1>
+        <hr>
+    <p> <button onclick="converterMoedas()">Converter</button> </p>
+    <p> Clique no botão acima para iniciar </p>
+    <script>
+        var cotacao = 0
+        function cotacaoDolar() {
+            cotacao = Number(prompt("Antes de mais nada. Qual a cotação do dólar hoje?"))
+        }
+        function converterMoedas() {
+            var real = Number(prompt("Quantos R$ vocé tem em carteira?"))
+            var dolar = real / cotacao
+            alert(`Você vai conseguir comprar US$${dolar.toFixed(2)} com R$${real.toFixed(2)} na cotação de R$${cotacao.toFixed(2)} por dólar.`)
+        }
+    </script>
+</body>
+</html>
