@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Antes e Depois</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio do Antes e Depois</h1>
+        <hr>
+    <p> <button onclick="clicou()">Antecessor e Sucessor</button> </p>
+    <script>
+        function clicou() {
+            var n = Number(prompt("Digite um número:"))
+            var a = n - 1
+            var s = n + 1
+            alert(`Antes de ${n} vem o número ${a}.\nDepois de ${n} vem o número ${s}.`)
+        }
+    </script>
+</body>
+</html>
