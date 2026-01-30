@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Conversor de Temperaturas</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+        <hr>
+    <p> <button onclick="converterTemperatura()">Converter</button> </p>
+    <script>
+        function converterTemperatura() {
+            var celsius = Number(prompt("Digite uma temperatura em Celsius (°C):"))
+            var fahrenheit = (celsius * 9/5) + 32
+            var kelvin = celsius + 273.15
+            alert(`A temperatura de ${celsius} °C corresponde a:\n${fahrenheit} graus Fahrenheit (°F)\n${kelvin} graus Kelvin (K)`)
+        }
+    </script>
+</body>
+</html>
