@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Desconto</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+        <hr>
+    <p> <button onclick="calculoDesconto()">Desconto de 10%</button> </p>
+    <div id="res">
+        <p>Clique no botão acima para calcular o desconto</p>
+    </div>
+    <script>
+        function calculoDesconto() {
+            var res = document.getElementById('res')
+            var produto = prompt(`Qual produto você está comprando?`)
+            var preco = Number(prompt(`Quanto custa o(a) ${produto} que você está comprando?`))
+            var desconto = preco * 0.10
+            var precoDesconto = preco - desconto
+            res.innerHTML = `<h2>Calculando desconto de 10% para ${produto}</h2>`
+            res.innerHTML += `<p>O preço original era R$${preco.toFixed(2)}.</p>`
+            res.innerHTML += `<p>Você acaba de ganhar R$${desconto.toFixed(2)} (-10%) de desconto.</p>`
+            res.innerHTML += `<p>No fim, você vai pagar R$${precoDesconto.toFixed(2)} no seu ${produto}.</p>`
+        }
+    </script>
+</body>
+</html>
