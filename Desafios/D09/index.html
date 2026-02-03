@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Reajuste</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+        <hr>
+    <p> <button onclick="calculoReajuste()">Reajustar Salário</button> </p>
+    <div id="res">
+        <p>Clique no botão acima para calcular o reajuste</p>
+    </div>
+    <script>
+        function calculoReajuste() {
+            var res = document.getElementById('res')
+            var nome = prompt(`Qual é o nome do funcionário?`)
+            var salario = Number(prompt(`Qual é o salário de ${nome}?`))
+            var aumento = Number(prompt(`Qual é o percentual de aumento que ${nome} vai receber?`))
+            var valorAumento = salario * (aumento / 100)
+            var novoSalario = salario + valorAumento
+            res.innerHTML = `<h2>${nome} recebeu um aumento!</h2>`
+            res.innerHTML += `<p>O salário era de R$${salario.toFixed(2)}.</p>`
+            res.innerHTML += `<p>Com o aumento de ${aumento}%, o salário vai aumentar R$${valorAumento.toFixed(2)} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, ${nome} vai ganhar R$${novoSalario.toFixed(2)}.</p>`
+        }
+    </script>
+</body>
+</html>
