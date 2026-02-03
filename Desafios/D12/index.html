@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da Mudança de Preço</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+        <hr>
+    <p> <button onclick="mudancaPreco()">Verificar</button> </p>
+    <div id="res">
+        <p>Clique no botão acima para analisar a mudança de preço</p>
+    </div>
+    <script>
+        function mudancaPreco() {
+            var res = document.getElementById('res')
+            var precoAntigo = Number(prompt(`Qual era o preço antigo do produto?`))
+            var precoNovo = Number(prompt(`Qual é o preço novo do produto?`))
+            var diferenca = precoAntigo - precoNovo
+            var porcentagem = diferenca / precoAntigo * 100
+            if (precoNovo > precoAntigo) {
+                res.innerHTML = `<h2>Analisando os valores informados</h2>`
+                res.innerHTML += `<p>O produto custava R$${precoAntigo.toFixed(2)} e agora custa R$${precoNovo.toFixed(2)}.</p>`
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+                res.innerHTML += `<p>O preço subiu R$${Math.abs(diferenca).toFixed(2)} em relação ao preço antigo.</p>`
+                res.innerHTML += `<p>Uma variação de ${Math.abs(porcentagem).toFixed(2)}% para cima.</p>`
+            } else {
+                res.innerHTML = `<h2>Analisando os valores informados</h2>`
+                res.innerHTML += `<p>O produto custava R$${precoAntigo.toFixed(2)} e agora custa R$${precoNovo.toFixed(2)}.</p>`
+                res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+                res.innerHTML += `<p>O preço caiu R$${Math.abs(diferenca).toFixed(2)} em relação ao preço antigo.</p>`
+                res.innerHTML += `<p>Uma variação de ${Math.abs(porcentagem).toFixed(2)}% para baixo.</p>`
+            }
+        }
+    </script>
+</body>
+</html>
