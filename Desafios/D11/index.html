@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Ano Bissexto</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+        button {
+            font: bold 14pt arial;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .bissexto {
+            color: green;
+        }
+        .nao-bissexto {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+        <hr>
+    <p> <button onclick="verificarBissexto()">Verificar</button> </p>
+    <div id="res">
+        <p>Informe um ano para saber se ele é bissexto ou não</p>
+    </div>
+    <script>
+        function verificarBissexto() {
+            var res = document.getElementById('res')
+            var ano = Number(prompt(`Qual ano você quer verificar?`))
+            var bissexto = (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)
+            res.innerHTML = `<h2>Analisando o ano de ${ano}</h2>`
+            res.innerHTML += `<p>O ano de ${ano} <strong class="${bissexto ? 'bissexto' : 'nao-bissexto'}">${bissexto ? 'É BISSEXTO \u2705' : 'NÃO É BISSEXTO \u274C'}</strong></p>`
+
+        }
+    </script>
+</body>
+</html>
